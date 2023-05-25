@@ -1,0 +1,30 @@
+<main class="main-painel">
+    <section class="painel">
+        <form action="/postar" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="titulo">Titulo:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+            <div>
+                <label for="tipoVideo">Tipo de video:</label>
+                <select name="tipoVideo" id="tipoVideo">
+                    <option value="" disabled selected>Selecione um tipo de video</option>
+                    <option value="musicvideo">Music Video</option>
+                    <option value="aftermovie">AfterMovie</option>
+                    <option value="motiondesign">Motion Design</option>
+                </select>
+            </div>
+            <div>
+                <label for="link">Link incorporado:</label>
+                <input type="text" id="link" name="link" required>
+            </div>
+            <div>
+                <label for="videoThumb">Thumbnail:</label>
+                <input type="file" id="videoThumb" name="videoThumb" required>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </section>
+</main>

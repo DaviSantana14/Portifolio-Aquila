@@ -1,0 +1,26 @@
+<main>
+        <div class="button">
+            <ul>
+            <li><button>MUSIC VIDEO</button></li>
+            <li><button>AFTERMOVIE</button></li>
+            <li><button>MOTION DESIGN</button></li>
+            </ul>
+        </div>
+
+        <section class="album">
+            <div class="works">
+                <?php  foreach($this->view->videos as $key => $video) { 
+                ?> 
+                <div class="img-wraper" id="<?=$video['tipo_video']?>">
+                    <a href="/video?id=<?=$video['id']?>" class="link">
+                        <video autoplay muted loop preload>
+                            <source src="<?=$video['caminho_thumb']?>" type="video/mp4">
+                        </video>
+                    </a>
+                </div>
+
+                <?php } ?>
+
+            </div>
+        </section>
+    </main>
