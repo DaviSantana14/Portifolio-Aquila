@@ -10,6 +10,8 @@ class Video extends Model{
     private $tipoVideo;
     private $link;
     private $thumbnail;
+    
+    private $descricao;
 
     public function getId() {
         return $this->id;
@@ -54,6 +56,14 @@ class Video extends Model{
         $this->thumbnail = $thumbnail;
     }
 
+    public function getDescricao(){
+        return $this->descricao;
+    }
+
+    public function setDescricao($descricao) {
+        $this->descricao = $descricao;
+    }
+
 
     public function publicar(){
         $query = "insert into videos(titulo, tipo_video, link, caminho_thumb) values (:titulo, :tipo_video, :link, :caminho_thumb);";
@@ -71,5 +81,43 @@ class Video extends Model{
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+
+    public function getVideoId($video_id){
+        $query = 'select titulo, tipo_video, link, caminho_thumb from videos where id = :id';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':id', $video_id);
+        $stmt->execute();
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function editar($video_id){
+        if(empty($this->getThumbnail())){
+            $query = 'update videos set titulo = :titulo, tipo_video = :tipo_video, link = :link where id = :id';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':titulo', $this->getTitulo());
+            $stmt->bindValue(':tipo_video', $this->getTipoVideo());
+            $stmt->bindValue(':link', $this->getLink());
+            $stmt->bindValue(':id', $video_id);
+            $stmt->execute();
+            return;
+        }
+        $query = 'update videos set titulo = :titulo, tipo_video = :tipo_video, link = :link where id = :id';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':titulo', $this->getTitulo());
+        $stmt->bindValue(':tipo_video', $this->getTipoVideo());
+        $stmt->bindValue(':link', $this->getLink());
+        $stmt->bindValue(':id', $video_id);
+        $stmt->execute();
+    }
+
+    public function excluir($video_id){
+        $query = 'delete from videos where id = :video_id';
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':video_id', $video_id);
+        $stmt->execute();
+    }
+
+
+
 }
 ?>

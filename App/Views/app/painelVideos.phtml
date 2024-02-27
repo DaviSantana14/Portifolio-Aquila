@@ -1,0 +1,34 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="/painel">Publicar Video</a></li>
+
+            <li><a href="/painelVideos">Editar Videos</a></li>
+        </ul>
+        <img src="images/Aquila.png" alt="logo aquila">
+    </nav>
+</header>
+<main>
+    <div class="table">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th class="actions">Ações</th>
+            </tr>
+
+            <?php foreach ($this->view->videos as $key => $value) { ?>
+            <tr>
+                <td><?=$value['id']?></td>
+                <td><?=$value['titulo']?></td>
+                <td><?=$value['tipo_video']?></td>
+                <td>
+                    <a href="/editar?id=<?=$value['id']?>" class="btnActions edit">Editar</a>
+                    <a href="/excluir?id=<?=$value['id']?>" class="btnActions delete">Excluir</a>
+                </td>
+            </tr>   
+            <?php } ?>
+        </table>
+    </div>
+</main>

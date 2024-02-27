@@ -1,3 +1,13 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="/painel">Publicar Video</a></li>
+
+            <li><a href="/painelVideos">Editar Videos</a></li>
+        </ul>
+        <img src="images/Aquila.png" alt="logo aquila">
+    </nav>
+</header>
 <main class="main-painel">
     <section class="painel">
         <form action="/postar" method="post" enctype="multipart/form-data">
@@ -25,6 +35,9 @@
             <div>
                 <input type="submit">
             </div>
+            <?php if (isset($_GET['postagem']) && $_GET['postagem'] == 'sucesso') { ?>
+                <p class="sucesso_postagem">Video postado com sucesso!</p>
+            <?php } ?>
         </form>
     </section>
 </main>

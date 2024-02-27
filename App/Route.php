@@ -50,13 +50,35 @@ class Route extends Bootstrap {
 			'action' => 'painel'
 		);
 
+		$routes['painelVideos'] = array(
+			'route' => '/painelVideos',
+			'controller' => 'AppController',
+			'action' => 'painelVideos'
+		);
+
 		$routes['postar'] = array(
 			'route' => '/postar',
 			'controller' => 'AppController',
 			'action' => 'postar'
 		);
 
+		$routes['editar'] = array(
+			'route' => '/editar',
+			'controller' => 'AppController',
+			'action' => 'editar'
+		);
 
+		$routes['salvar'] = array(
+			'route' => '/salvar',
+			'controller' => 'AppController',
+			'action' => 'salvar'
+		);
+
+		$routes['excluir'] = array(
+			'route' => '/excluir',
+			'controller' => 'AppController',
+			'action' => 'excluir'
+		);
 
 		$this->setRoutes($routes);
 	}

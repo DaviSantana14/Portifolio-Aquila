@@ -1,12 +1,12 @@
 {
-	"name": "PortifolioAquila",
+	"name": "miniframework",
 	"require": {
 		"php": ">= 7.0"
 	},
 	"authors": [
 		{
 			"name": "Davi Santana",
-			"email": "davistzd@gmail.com"
+			"email": "davisantana.1404@gmail.com"
 		}
 	],
 	"autoload": {

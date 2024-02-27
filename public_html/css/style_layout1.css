@@ -1,0 +1,414 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Biko';
+}
+
+body{
+    background-color: #121212;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: Biko_bold;
+    src: url('../fonts/Biko_Bold.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Biko;
+    src: url('../fonts/Biko_Regular.otf');
+    font-display: swap;
+}
+
+
+.cabecalho{
+    display: flex;
+    font-family: 'Biko_bold';
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    padding: 35px;
+    width: 100%;
+}
+
+.cabecalho li{
+    list-style-type: none;
+}
+
+.cabecalho-navegacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cabecalho-navegacao ul{
+    display: flex;
+}
+
+.cabecalho-navegacao .cabecalho-navegacao-botoes ul{
+    display: flex;
+    gap: 25px;
+}
+
+.cabecalho-navegacao a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+
+}
+
+.logo img{
+    width: 185px;
+    height: 64px;
+    filter: drop-shadow(0 0 10px rgba(109, 102, 168, 0.3));
+}
+
+.menu-mobile{
+    display: none;
+}
+
+.menu-mobile img{
+    width: 25px;
+}
+
+.cabecalho-mobile{
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    background-color: rgb(36, 36, 36);
+}
+
+.cabecalho-mobile.show{
+    display: flex;
+}
+
+.cabecalho-mobile{
+    flex-direction: column;
+}
+
+.cabecalho-mobile ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+.cabecalho-mobile li a{
+    display: block;
+    padding: 10px;
+    color: rgb(223, 223, 223);
+    text-decoration: none;
+}
+
+ul li .ativa{
+    color: #838383;
+}
+
+.cabecalho-mobile ul li .ativa-mobile{
+    color: #838383;
+}
+
+.button{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.button button{
+    color: white; 
+    padding: 8px 28px;
+    background-color: #121212;
+    border: 0.1px solid #6d66a8;
+    border-radius: 10px;
+    font-family: 'Biko';
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.button button.active {
+    background-color: #544e81;
+}
+
+.button ul{
+    display: flex;
+    gap: 30px;
+}
+
+.button li{
+    list-style-type: none;
+}
+
+.button button:hover{
+    background: #857dcc;
+}
+
+.album{
+    display: flex;
+    justify-content: center;
+}
+
+.works {
+    margin-top: 50px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.link{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.link img, .link video{
+    width: 25vw;
+}
+
+.img-wraper{
+    transition: 0.5;
+}
+
+
+/* CONTACT */
+
+.contact_content{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.about-contents{
+    background-color: #2d2f30;
+    width: 95%;
+    max-width: 1150px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(109, 102, 168, 0.9);
+    margin-bottom: 50px;
+}
+
+.informations{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 50px;
+}
+
+.informations h1{
+    display: inline-block;
+    color: #d4d4d4;
+    font-family: 'Biko_bold';
+    border-bottom: 1px solid #6d66a8;
+    font-size: 38px;
+}
+
+.informations p{
+    color: #d4d4d4;
+    font-family: 'Biko';
+    font-size: 18px;
+}
+
+.image{
+    width: 50%;
+}
+
+.contact, .about-me{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image>img{
+    max-width: 370px;
+    border-radius: 50%;
+}
+
+.about-me .english{
+    color: #a5a5a5;;
+}
+
+.redes{
+    margin-top: 20px;
+}
+
+.redes img{
+    width: 30px;
+}
+
+.redes ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.redes li{
+    list-style: none;
+}
+
+.redes ul li:nth-child(3) a img,
+.redes ul li:nth-child(4) a img{
+    max-width: 25px;
+}
+
+.video-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.titulo-video h1{
+    font-size: 1.2em;
+}
+
+.titulo{
+    color: #d4d4d4;
+    font-family: 'Biko';
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 1.3em;
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.titulo-alinhamento{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo img{
+    width: 30px;
+}
+
+.videos{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.texto{
+    color: #d4d4d4;
+    font-family: 'Biko';
+}
+
+
+@media screen and (max-width:1080px){
+
+    .butt button{
+        padding: 10px 25px;
+        font-size: 20px;
+    }
+
+    .button{
+        width: 95%;
+    }
+
+    .image>img{
+        max-width: 350px;
+    }
+
+}
+
+@media  screen and (max-width:768px){
+    .works{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .link img, .link video{
+        width: 40vw;
+    }
+
+    .button ul{
+        gap: 20px;
+    }
+
+    .button button{
+        font-size: 0.8em;
+    }
+
+    .cabecalho-navegacao-botoes{
+        display: none;
+    }
+
+    .menu-mobile{
+        display: block;
+    }
+
+    .about-contents{
+        flex-direction: column-reverse;
+        align-items: center
+    }
+
+    .image{
+        margin-top: 25px;
+    }
+
+    .informations{
+        width: 85%;
+    }
+
+    .contact, .about-me {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 549px){
+    .cabecalho{
+        justify-content: space-between;
+    }
+
+    .button button{
+        font-size: 0.6em;
+    }
+
+    .button ul{
+        gap: 5px;
+    }
+}
+
+@media  screen and (max-width:425px) {
+    .works{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    .titulo-video h1{
+        font-size: 1em;
+    }
+
+    .videos iframe{
+        height: 350px;
+    }
+
+    .link img, .link video{
+        width: 70vw;
+    }
+
+    .informations{
+        width: 100%;
+    }
+
+    .image>img{
+        max-width: 300px;
+    }
+
+}
